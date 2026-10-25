@@ -6,8 +6,9 @@
 </script>
 
 <svelte:head>
-	<ModeWatcher/>
 	<link rel="icon" href={favicon} />
 </svelte:head>
+
+<ModeWatcher />
 
 {@render children()}
