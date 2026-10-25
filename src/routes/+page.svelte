@@ -24,7 +24,7 @@
     import { loadFull } from "tsparticles";
 
     // font+icon imports
-    import "@fontsource-variable/space-grotesk";
+    import "@fontsource-variable/inter";
     import HomeIcon from "@lucide/svelte/icons/home";
     import LinkedinIcon from "@lucide/svelte/icons/linkedin";
     import GithubIcon from "@lucide/svelte/icons/github";
@@ -80,16 +80,16 @@
 <!-- Navigation Bar -->
 <nav class="fixed top-0 left-0 w-full p-5 flex justify-items-center z-10 space-grotesk bg-black/30 backdrop-blur-md">
     <div class="m-auto">
-        <a href="/" class="border-b-2 border-blue-600 hover:bg-blue-500/30 transition-colors mr-5">
+        <a href="/" class="border-b-2 border-indigo-600 hover:bg-blue-500/30 transition-colors mr-5">
             <span class="text-lg font-medium">Home</span>
         </a>
-        <a href="#about" class="mr-5 text-gray-400 border-b border-transparent hover:border-blue-600 hover:bg-blue-500/30 transition-colors">
+        <a href="#about" class="mr-5 text-gray-400 border-b border-transparent hover:border-indigo-600 hover:bg-blue-500/30 transition-colors">
             <span class="text-lg font-medium">About</span>
         </a>
-        <a href="#projects" class="mr-5 text-gray-400 border-b border-transparent hover:border-blue-600 hover:bg-blue-500/30 transition-colors">
+        <a href="#projects" class="mr-5 text-gray-400 border-b border-transparent hover:border-indigo-600 hover:bg-blue-500/30 transition-colors">
             <span class="text-lg font-medium">Projects</span>
         </a>
-        <a href="#blog" class="text-gray-400 border-b border-transparent hover:border-blue-600 hover:bg-blue-500/30 transition-colors">
+        <a href="#blog" class="text-gray-400 border-b border-transparent hover:border-indigo-600 hover:bg-blue-500/30 transition-colors">
             <span class="text-lg font-medium">Blog</span>
         </a> 
     </div>
@@ -98,23 +98,23 @@
 
 <div class="flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
     <div class="flex w-full max-w-4xl flex-col gap-0.5">
-        <h1 class="text-7xl space-grotesk font-bold mb-4 from-blue-500 to-purple-700 text-gradient">Sameer Haritasa</h1>
+        <h1 class="text-7xl font-bold mb-4 text-indigo-600">Sameer Haritasa</h1>
         <p class="mb-4 text-gray-200">
-            CS @ UML &#8226; Full-Stack Developer &#8226; AI/ML Enthusiast
+            CS @ UMass Amherst &#8226; Full-Stack Developer &#8226; AI/ML Enthusiast
         </p>
         <p class="max-w-3xl text-gray-400 font-mono italic text-sm mb-7 transition-colors">
             /s̪əmiːɾə ɦɑːɾiːt̪əs̪ə/
         </p>
         <div class="items-start">
             <a
-                href="https://www.linkedin.com/in/sameeramurthy/"
+                href="https://www.linkedin.com/in/haritasa/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="rounded-full bg-neutral-800 hover:bg-neutral-900 text-white px-4 py-3 transition-colors mr-1">
-                <LinkedinIcon class="fill-blue-500 stroke-blue-500 inline-block w-4 h-4"/>
+                <LinkedinIcon class="inline-block w-4 h-4"/>
             </a>
             <a
-                href="https://github.com/SameeraMurthy"
+                href="https://github.com/haritasa"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="rounded-full bg-neutral-800 hover:bg-neutral-900 text-white px-4 py-3 transition-colors mr-1">

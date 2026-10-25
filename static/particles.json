@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 700,
+      "value": 500,
       "density": {
         "enable": true,
         "value_area": 800
@@ -18,7 +18,7 @@
       "random": true,
       "animation": {
         "enable": true,
-        "speed": 1,
+        "speed": 0.1,
         "opacity_min": 0.5,
         "sync": false
       }
@@ -59,7 +59,7 @@
       "particles": {
         "enable": true,
         "color": "#000000",
-        "frequency": 0.15,
+        "frequency": 0.05,
         "opacity": 1
       },
       "lines": {
