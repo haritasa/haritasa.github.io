@@ -43,18 +43,23 @@
     import MoonIcon from "@lucide/svelte/icons/moon";
 
     // tsParticles setup
-    let ParticlesComponent: any;
-    onMount(async () => {
-        const module = await import("@tsparticles/svelte");
-        ParticlesComponent = module.default;
-    });
-    let particlesUrl = "/particles.json"; // located in static folder
+    let ParticlesComponent = $state<any>(null);
+    let particlesUrl = $state("/particles.json"); // located in static folder
+
     let onParticlesLoaded = (event: any) => {
         const particlesContainer = event.detail.particles;
         console.log("Loaded tsParticles:", particlesContainer);
     };
-    void particlesInit(async (engine) => {
-        await loadFull(engine);
+
+    onMount(async () => {
+        // Initialize the engine first, then load the component.
+        // Doing this inside onMount (rather than at render time) avoids
+        // Svelte 5's state_unsafe_mutation error from the tsParticles store.
+        await particlesInit(async (engine) => {
+            await loadFull(engine);
+        });
+        const module = await import("@tsparticles/svelte");
+        ParticlesComponent = module.default;
     });
 
     let letItSnow = () => {
@@ -66,13 +71,15 @@
 
 <!-- tsParticles background -->
 
-<svelte:component
-    this={ParticlesComponent}
-    id="tsparticles"
-    class="absolute inset-0 -z-10"
-    url={particlesUrl}
-    on:particlesLoaded={onParticlesLoaded}
-/>
+{#if ParticlesComponent}
+    {@const Particles = ParticlesComponent}
+    <Particles
+        id="tsparticles"
+        class="absolute inset-0 -z-10"
+        url={particlesUrl}
+        on:particlesLoaded={onParticlesLoaded}
+    />
+{/if}
 
 <!-- SMOOTH CURSOR (DND) -->
 <!-- <SmoothCursor/> -->
